@@ -1,0 +1,507 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+  <head>
+    <meta charset="UTF-8" />
+
+    <!-- Primary Meta Tags -->
+    <title>Ye Yint Lwin | Personal Profile</title>
+
+    <meta
+      name="google-site-verification"
+      content="3awu7nU5WwPUtrcQnJKxrxg4aKDtNGuqubGc_AQEaCU"
+    />
+
+    <meta
+      name="description"
+      content="Ye Yint Lwin is a Myanmar national studying IT in Osaka, Japan. Passionate about electronics, app development, and creating innovative, user-friendly solutions. Explore my portfolio to learn more!"
+    />
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta
+      property="og:title"
+      content="Ye Yint Lwin - IT Student & Full Stack Developer in Osaka"
+    />
+    <meta
+      property="og:description"
+      content="Discover the journey of Ye Yint Lwin, a developer passionate about technology, electronics, and creating scalable software solutions."
+    />
+    <meta property="og:url" content="https://yeyintlwin.com" />
+    <meta
+      property="og:image"
+      content="https://yeyintlwin.com/assets/preview-image.jpg"
+    />
+    <!-- Replace with your preview image URL -->
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta
+      name="twitter:title"
+      content="Ye Yint Lwin - IT Student & Full Stack Developer in Osaka"
+    />
+    <meta
+      name="twitter:description"
+      content="Visit my portfolio to see my work in app development, electronics, and scalable software solutions."
+    />
+    <meta
+      name="twitter:image"
+      content="https://yeyintlwin.com/assets/preview-image.jpg"
+    />
+    <!-- Replace with your preview image URL -->
+
+    <!-- Additional SEO -->
+    <meta name="author" content="Ye Yint Lwin" />
+    <meta
+      name="keywords"
+      content="Ye Yint Lwin, IT student, Full Stack Developer, Java Developer, Flutter Developer, Electronics, App Development, Embedded Programming, Osaka, Portfolio"
+    />
+
+    <meta name="robots" content="index, follow" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Ye Yint Lwin | Personal Profile</title>
+    <link
+      rel="shortcut icon"
+      href="../static/images/favicon.ico"
+      type="image/x-icon"
+    />
+
+    <link rel="stylesheet" href="/css/style.css" />
+    <link rel="stylesheet" href="/css/portfolio.css" />
+    <link rel="stylesheet" href="/css/container.css" />
+    <link rel="stylesheet" href="/css/grid.css" />
+    <!--    <link rel="stylesheet" href="/css/debugger.css" />-->
+    <link rel="stylesheet" href="/css/wavy-border.css" />
+    <link rel="stylesheet" href="/css/language-dropdown.css" />
+
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
+    />
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+      integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+
+    <style></style>
+  </head>
+
+  <body>
+    <header>
+      <div class="header-container">
+        <a class="logo animated-text" href="#home">YeYintLwin</a>
+        <nav>
+          <ul>
+            <li>
+              <a href="#home">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="16"
+                  height="16"
+                  fill="currentColor"
+                  class="bi bi-house"
+                  viewBox="0 0 16 16"
+                >
+                  <path
+                    d="M8.707 1.5a1 1 0 0 0-1.414 0L.646 8.146a.5.5 0 0 0 .708.708L2 8.207V13.5A1.5 1.5 0 0 0 3.5 15h9a1.5 1.5 0 0 0 1.5-1.5V8.207l.646.647a.5.5 0 0 0 .708-.708L13 5.793V2.5a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v1.293zM13 7.207V13.5a.5.5 0 0 1-.5.5h-9a.5.5 0 0 1-.5-.5V7.207l5-5z"
+                  />
+                </svg>
+                <span th:text="#{nav.home}">Home</span>
+              </a>
+            </li>
+            <li>
+              <a href="#about">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="16"
+                  height="16"
+                  fill="currentColor"
+                  class="bi bi-person"
+                  viewBox="0 0 16 16"
+                >
+                  <path
+                    d="M8 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6m2-3a2 2 0 1 1-4 0 2 2 0 0 1 4 0m4 8c0 1-1 1-1 1H3s-1 0-1-1 1-4 6-4 6 3 6 4m-1-.004c-.001-.246-.154-.986-.832-1.664C11.516 10.68 10.289 10 8 10s-3.516.68-4.168 1.332c-.678.678-.83 1.418-.832 1.664z"
+                  />
+                </svg>
+                <span th:text="#{nav.about}">Who am i?</span>
+              </a>
+            </li>
+            <li>
+              <a href="#projects">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="16"
+                  height="16"
+                  fill="currentColor"
+                  class="bi bi-code-slash"
+                  viewBox="0 0 16 16"
+                >
+                  <path
+                    d="M10.478 1.647a.5.5 0 1 0-.956-.294l-4 13a.5.5 0 0 0 .956.294zM4.854 4.146a.5.5 0 0 1 0 .708L1.707 8l3.147 3.146a.5.5 0 0 1-.708.708l-3.5-3.5a.5.5 0 0 1 0-.708l3.5-3.5a.5.5 0 0 1 .708 0m6.292 0a.5.5 0 0 0 0 .708L14.293 8l-3.147 3.146a.5.5 0 0 0 .708.708l3.5-3.5a.5.5 0 0 0 0-.708l-3.5-3.5a.5.5 0 0 0-.708 0"
+                  />
+                </svg>
+                <span th:text="#{nav.projects}">Projects</span>
+              </a>
+            </li>
+
+            <li>
+              <a href="#contact">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="16"
+                  height="16"
+                  fill="currentColor"
+                  class="bi bi-send"
+                  viewBox="0 0 16 16"
+                >
+                  <path
+                    d="M15.854.146a.5.5 0 0 1 .11.54l-5.819 14.547a.75.75 0 0 1-1.329.124l-3.178-4.995L.643 7.184a.75.75 0 0 1 .124-1.33L15.314.037a.5.5 0 0 1 .54.11ZM6.636 10.07l2.761 4.338L14.13 2.576zm6.787-8.201L1.591 6.602l4.339 2.76z"
+                  />
+                </svg>
+                <span th:text="#{nav.contact}">Contact</span>
+              </a>
+            </li>
+          </ul>
+        </nav>
+        <div class="header-actions">
+          <form method="get" action="/">
+            <select
+              name="lang"
+              id="lang"
+              class="lang-select"
+              onchange="this.form.submit()"
+            >
+              <option
+                value="en"
+                th:selected="${#locale.language == 'en'}"
+                selected
+              >
+                🇬🇧 EN
+              </option>
+              <option value="ja" th:selected="${#locale.language == 'ja'}">
+                🇯🇵 JP
+              </option>
+              <option value="mm" th:selected="${#locale.language == 'mm'}">
+                🇲🇲 MM
+              </option>
+            </select>
+          </form>
+          <button id="themeSwitcher" class="theme-switcher">
+            <span id="themeIcon" class="material-symbols-outlined">
+              dark_mode
+            </span>
+          </button>
+        </div>
+      </div>
+    </header>
+    <main>
+      <section id="home" class="section-home">
+        <div class="container h-100">
+          <div class="content-wrapper grid grid-4 md:grid-8 lg:grid-12">
+            <div class="content-left col-4 md:col-5 lg:col-7">
+              <p class="main-color mb-1" th:text="#{header.greeting}">
+                Hi There! I'm
+              </p>
+              <h1 class="mb-1" th:text="#{header.title}">
+                A Software Developer
+              </h1>
+              <p class="mb-3" th:text="#{header.description}">
+                I'm an IT student passionate about web development, mobile
+                development, back-end programming, embedded programming, and
+                digital electronics. With a strong foundation in Physics and
+                years of hands-on experience, I love crafting user-friendly
+                applications and solving complex problems.
+              </p>
+              <div class="btn-group mb-5">
+                <a
+                  class="btn"
+                  href="mailto:yeyintlwin.dev@gmail.com"
+                  target="_blank"
+                  th:text="#{button.contact}"
+                  >Contact me!</a
+                >
+                <a
+                  class="btn btn-hollow"
+                  target="_blank"
+                  href=""
+                  th:text="#{button.download.cv}"
+                  >Download CV</a
+                >
+              </div>
+            </div>
+            <div class="content-right col-4 md:col-3 lg:col-5">
+              <dotlottie-player
+                src="https://lottie.host/bb74d774-63fd-4719-8860-375c86cf1032/UKPKzQBeGH.lottie"
+                background="transparent"
+                speed="1"
+                loop
+                autoplay
+              ></dotlottie-player>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="about" class="section-about wavy-border-tb">
+        <div class="container h-100">
+          <h2 class="section-title" th:text="#{about.title}">About Me</h2>
+          <div class="content-wrapper grid grid-4 md:grid-8 lg:grid-12">
+            <div class="content-left col-4 md:col-3 lg:col-5 mb-3">
+              <img src="/images/yeyintlwin-1200x900.jpg" alt="Ye Yint Lwin" />
+            </div>
+            <div class="content-right col-4 md:col-5 lg:col-7">
+              <h3 class="main-color mb-1" th:text="#{about.subtitle}">
+                Who am I?
+              </h3>
+              <p class="mb-3" th:utext="#{about.intro}">
+                👋 My name is <b>Ye Yint Lwin</b>, a Myanmar national currently
+                studying IT in Osaka, Japan. Since childhood, I’ve been
+                passionate about repairing and creating machines and
+                electronics. This passion led me to explore app development and
+                dive into IT after earning my bachelor’s degree. I specialize in
+                building electronic circuits, embedded programming, front-end,
+                and back-end development, combining logical thinking with
+                creativity to deliver innovative solutions.
+              </p>
+              <h3 class="main-color mb-2" th:text="#{education.title}">
+                My educational background
+              </h3>
+              <ul class="education">
+                <li>
+                  <strong th:text="#{education.degree1.title}"
+                    >B.Sc (Physics)</strong
+                  ><br /><em>
+                    <th:block th:text="#{education.degree1.institution}">
+                      University of Hinthada
+                    </th:block>
+                    |
+                    <th:block th:text="#{education.degree1.period}">
+                      2011~2018</th:block
+                    ></em
+                  >
+                </li>
+
+                <li>
+                  <strong th:text="#{education.degree2.title}"
+                    >UI/UX Design</strong
+                  ><br /><em>
+                    <th:block th:text="#{education.degree2.institution}">
+                      Fairway Technology (Myanmar)
+                    </th:block>
+                    |
+                    <th:block th:text="#{education.degree2.period}">
+                      2021~2022</th:block
+                    ></em
+                  >
+                </li>
+
+                <li>
+                  <strong th:text="#{education.degree3.title}"
+                    >Japanese Language</strong
+                  ><br /><em>
+                    <th:block th:text="#{education.degree3.institution}">
+                      Kyoshin Language Acamedy (Osaka)
+                    </th:block>
+                    |
+                    <th:block th:text="#{education.degree3.period}">
+                      2022~2024</th:block
+                    ></em
+                  >
+                </li>
+
+                <li>
+                  <strong th:text="#{education.degree4.title}"
+                    >IT Engineering</strong
+                  ><br /><em>
+                    <th:block th:text="#{education.degree4.institution}">
+                      i-Seifu Institute of IT (Osaka)
+                    </th:block>
+                    |
+                    <th:block th:text="#{education.degree4.period}">
+                      2024~present</th:block
+                    ></em
+                  >
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="projects" class="section-projects">
+        <div class="container h-100">
+          <h2 class="section-title" th:text="#{projects.title}">
+            Featured Projects
+          </h2>
+          <p class="section-paragraph mb-4" th:text="#{projects.mantra}">
+            My mantra? “Less is more.” Everything I design is clean, simple, and
+            packed with purpose. Let’s keep it bold, minimal, and meaningful!
+          </p>
+          <div class="my-projects grid grid-4 md:grid-8 lg:grid-12">
+            <!-- start:project-card -->
+            <div class="project-card col-4 md:col-4 lg:col-6 my-2">
+              <div class="img-hover-zoom">
+                <img src="/images/music_app_mockup.jpg" alt="Project Image" />
+              </div>
+              <div class="project-info">
+                <div class="project-title">
+                  <h3>MusicsStore</h3>
+                  <div class="project-links">
+                    0 <i class="fa-regular fa-star"></i>
+                    <a
+                      href="https://github.com/yeyintlwin/MusicsStore"
+                      target="_blank"
+                      ><i class="fa-brands fa-github"></i
+                    ></a>
+                  </div>
+                </div>
+
+                <p th:text="#{projects.musicstore.description}">
+                  This is my first Android app, which I created around 2015. The
+                  app allows users to search for MP3 files by categories such as
+                  Title, Artist, Genre, and Album, download MP3 files, and
+                  listen to them. It was developed using Java, and the back-end
+                  was written in PHP.
+                </p>
+
+                <ul class="tech-stack">
+                  <li>Java</li>
+                  <li>PHP</li>
+                  <li>MySQL</li>
+                </ul>
+              </div>
+            </div>
+            <!-- end:project-card -->
+
+            <!-- start:project-card -->
+            <div class="project-card col-4 md:col-4 lg:col-6 my-2">
+              <div class="img-hover-zoom">
+                <img
+                  src="/images/cli_shopping_manager_mockup.png"
+                  alt="Project Image"
+                />
+              </div>
+              <div class="project-info">
+                <div class="project-title">
+                  <h3>CLISimpleManage</h3>
+                  <div class="project-links">
+                    0 <i class="fa-regular fa-star"></i>
+                    <a
+                      href="https://github.com/yeyintlwin/CLISimpleManage"
+                      target="_blank"
+                      ><i class="fa-brands fa-github"></i
+                    ></a>
+                  </div>
+                </div>
+
+                <p th:text="#{projects.cli.description}">
+                  This is my first-year school project. The program consists of
+                  three modules: User, Shop, and Bank, which are managed through
+                  a Command Line Interface (CLI). Built with Java using the MVC
+                  pattern, it features a custom database created with JSON to
+                  support full CRUD operations.
+                </p>
+
+                <ul class="tech-stack">
+                  <li>Java</li>
+                  <li>JSON</li>
+                </ul>
+              </div>
+            </div>
+            <!-- end:project-card -->
+          </div>
+          <p
+            class="section-paragraph mt-4"
+            th:utext="#{projects.github.text('https://github.com/yeyintlwin')}"
+          >
+            Check out my other projects on
+            <a
+              class="main-color"
+              href="https://github.com/yeyintlwin"
+              target="_blank"
+              >GitHub!</a
+            >
+          </p>
+        </div>
+      </section>
+
+      <section id="contact" class="section-contact wavy-border-t">
+        <div class="container h-75">
+          <h2 class="section-title" th:text="#{contact.title}">Contact</h2>
+          <p
+            class="section-paragraph text-bold mb-2"
+            th:text="#{contact.subtitle}"
+          >
+            Let’s Create Something Great Together!
+          </p>
+          <p class="section-paragraph mb-5" th:text="#{contact.description}">
+            I’m the kind of person who brings energy and positivity to the
+            table. Friendly, fun, and disciplined, I take my work seriously
+            without losing the joy in the process. If you’re looking for someone
+            who’s all in, I’m your person—don’t miss out!
+          </p>
+
+          <a
+            class="btn mail-btn"
+            href="mailto:yeyintlwin.dev@gmail.com"
+            target="_blank"
+            th:text="#{contact.cta}"
+            >Get in touch!</a
+          >
+        </div>
+      </section>
+    </main>
+    <footer>
+      <div class="container h-25">
+        <div class="media-buttons mb-1">
+          <a
+            href="https://github.com/yeyintlwin"
+            target="_blank"
+            title="Ye Yint Lwin's Github Profile"
+          >
+            <i class="fa-brands fa-github"></i>
+          </a>
+
+          <a
+            href="https://linkedin.com/in/yeyintlwin"
+            target="_blank"
+            title="Ye Yint Lwin's Linkedin Profile"
+          >
+            <i class="fa-brands fa-linkedin"></i>
+          </a>
+
+          <a
+            href="https://dev.to/yeyintlwin"
+            target="_blank"
+            title="Ye Yint Lwin's Linkedin Dev.to Profile"
+          >
+            <i class="fa-brands fa-dev"></i>
+          </a>
+
+          <a
+            href="https://www.facebook.com/yeyintlwin.me"
+            target="_blank"
+            title="Ye Yint Lwin's Facebook Profile"
+          >
+            <i class="fa-brands fa-facebook"></i>
+          </a>
+        </div>
+        <p>Coded with <i class="fa-regular fa-heart"></i> by Ye Yint Lwin</p>
+      </div>
+    </footer>
+    <script src="/js/portfolio.js"></script>
+    <script
+      src="https://unpkg.com/@dotlottie/player-component@2.7.12/dist/dotlottie-player.mjs"
+      type="module"
+    ></script>
+    <script>
+      let vh = window.innerHeight * 0.01;
+      document.documentElement.style.setProperty("--vh", `${vh}px`);
+    </script>
+  </body>
+</html>

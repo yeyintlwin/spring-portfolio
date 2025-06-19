@@ -1,0 +1,38 @@
+* {
+  /* border: 1px dotted; */
+}
+body::after {
+  content: "XS";
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  color: red;
+  margin: 10px 10px 0px 0px;
+}
+/* Small devices (phones, 576px and up) */
+@media screen and (min-width: 576px) {
+  body::after {
+    content: "S";
+  }
+}
+
+/* Medium devices (tablets, 768px and up) */
+@media screen and (min-width: 768px) {
+  body::after {
+    content: "M";
+  }
+}
+
+/* Large devices (desktops, 992px and up) */
+@media screen and (min-width: 992px) {
+  body::after {
+    content: "L";
+  }
+}
+
+/* Extra large devices (large desktops, 1200px and up) */
+@media screen and (min-width: 1200px) {
+  body::after {
+    content: "XL";
+  }
+}
