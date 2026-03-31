@@ -1,0 +1,11 @@
+.gradle
+build
+.git
+.gitignore
+.DS_Store
+.idea
+*.iml
+.vscode
+docker-compose*.yml
+Dockerfile
+README.md
