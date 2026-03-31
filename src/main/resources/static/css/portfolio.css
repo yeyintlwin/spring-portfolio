@@ -499,6 +499,7 @@ ul.education li strong {
 /* ── Footer ───────────────────────────────────────────────── */
 footer {
   background-color: var(--second-bg-color);
+  padding-bottom: 80px;
 }
 
 footer .container {
@@ -671,6 +672,7 @@ footer p {
 
   footer {
     margin-bottom: 0;
+    padding-bottom: 0;
   }
 
   .section-home .content-wrapper .content-left h1 {
