@@ -1,7 +1,7 @@
 // Function to set a cookie
 const setCookie = (name, value, days) => {
   const date = new Date();
-  date.setTime(date.getTime() + days * 24 * 60 * 60 * 1000); // Convert days to milliseconds
+  date.setTime(date.getTime() + days * 24 * 60 * 60 * 1000);
   document.cookie = `${name}=${value}; expires=${date.toUTCString()}; path=/`;
 };
 
@@ -21,15 +21,14 @@ const themeIcon = document.getElementById("themeIcon");
 const body = document.body;
 
 const toggleTheme = () => {
+  if (!themeIcon) return;
   const isDark = body.classList.toggle("dark-theme");
   themeIcon.textContent = isDark ? "light_mode" : "dark_mode";
-
-  // Save theme preference to cookie
-  setCookie("theme", isDark ? "dark" : "light", 30); // Expires in 30 days
+  setCookie("theme", isDark ? "dark" : "light", 30);
 };
 
-// Function to load theme from cookie
 const loadThemeFromCookie = () => {
+  if (!themeIcon) return;
   const savedTheme = getCookie("theme");
   if (savedTheme === "dark") {
     body.classList.add("dark-theme");
@@ -40,37 +39,40 @@ const loadThemeFromCookie = () => {
   }
 };
 
-// Load theme on page load
 loadThemeFromCookie();
 
-themeSwitcher.addEventListener("click", toggleTheme);
-themeSwitcher.addEventListener("touchstart", (event) => {
-  event.preventDefault(); // Prevent default touch behavior
-  toggleTheme();
-});
+if (themeSwitcher && themeIcon) {
+  themeSwitcher.addEventListener("click", toggleTheme);
+  themeSwitcher.addEventListener("touchstart", (event) => {
+    event.preventDefault();
+    toggleTheme();
+  });
+}
 // end: theme-function
 
 // start: menu item highlight
 const sections = document.querySelectorAll("section");
 const navLinks = document.querySelectorAll("nav a");
 
-window.addEventListener("scroll", () => {
-  let current = "";
+if (sections.length && navLinks.length) {
+  window.addEventListener("scroll", () => {
+    let current = "";
 
-  sections.forEach((section) => {
-    const sectionTop = section.offsetTop;
-    const sectionHeight = section.offsetHeight;
+    sections.forEach((section) => {
+      const sectionTop = section.offsetTop;
+      const sectionHeight = section.offsetHeight;
 
-    if (window.scrollY >= sectionTop - sectionHeight / 3) {
-      current = section.getAttribute("id");
-    }
+      if (window.scrollY >= sectionTop - sectionHeight / 3) {
+        current = section.getAttribute("id");
+      }
+    });
+
+    navLinks.forEach((link) => {
+      link.classList.remove("active");
+      if (link.getAttribute("href") === `#${current}`) {
+        link.classList.add("active");
+      }
+    });
   });
-
-  navLinks.forEach((link) => {
-    link.classList.remove("active");
-    if (link.getAttribute("href") === `#${current}`) {
-      link.classList.add("active");
-    }
-  });
-});
+}
 // end: menu item highlight

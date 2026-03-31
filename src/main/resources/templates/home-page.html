@@ -60,20 +60,18 @@
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <title>Ye Yint Lwin | Personal Profile</title>
     <link
-      rel="shortcut icon"
-      href="../static/images/favicon.ico"
+      rel="icon"
+      th:href="@{/images/favicon.ico}"
       type="image/x-icon"
     />
 
-    <link rel="stylesheet" href="/css/style.css" />
-    <link rel="stylesheet" href="/css/portfolio.css" />
-    <link rel="stylesheet" href="/css/container.css" />
-    <link rel="stylesheet" href="/css/grid.css" />
-    <!--    <link rel="stylesheet" href="/css/debugger.css" />-->
-    <link rel="stylesheet" href="/css/wavy-border.css" />
-    <link rel="stylesheet" href="/css/language-dropdown.css" />
+    <link rel="stylesheet" th:href="@{/css/style.css}" />
+    <link rel="stylesheet" th:href="@{/css/portfolio.css}" />
+    <link rel="stylesheet" th:href="@{/css/container.css}" />
+    <link rel="stylesheet" th:href="@{/css/grid.css}" />
+    <link rel="stylesheet" th:href="@{/css/wavy-border.css}" />
+    <link rel="stylesheet" th:href="@{/css/language-dropdown.css}" />
 
     <link
       rel="stylesheet"
@@ -87,8 +85,6 @@
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     />
-
-    <style></style>
   </head>
 
   <body>
@@ -99,70 +95,26 @@
           <ul>
             <li>
               <a href="#home">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="16"
-                  height="16"
-                  fill="currentColor"
-                  class="bi bi-house"
-                  viewBox="0 0 16 16"
-                >
-                  <path
-                    d="M8.707 1.5a1 1 0 0 0-1.414 0L.646 8.146a.5.5 0 0 0 .708.708L2 8.207V13.5A1.5 1.5 0 0 0 3.5 15h9a1.5 1.5 0 0 0 1.5-1.5V8.207l.646.647a.5.5 0 0 0 .708-.708L13 5.793V2.5a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v1.293zM13 7.207V13.5a.5.5 0 0 1-.5.5h-9a.5.5 0 0 1-.5-.5V7.207l5-5z"
-                  />
-                </svg>
+                <svg th:replace="~{fragments/nav-icons :: home}"></svg>
                 <span th:text="#{nav.home}">Home</span>
               </a>
             </li>
             <li>
               <a href="#about">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="16"
-                  height="16"
-                  fill="currentColor"
-                  class="bi bi-person"
-                  viewBox="0 0 16 16"
-                >
-                  <path
-                    d="M8 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6m2-3a2 2 0 1 1-4 0 2 2 0 0 1 4 0m4 8c0 1-1 1-1 1H3s-1 0-1-1 1-4 6-4 6 3 6 4m-1-.004c-.001-.246-.154-.986-.832-1.664C11.516 10.68 10.289 10 8 10s-3.516.68-4.168 1.332c-.678.678-.83 1.418-.832 1.664z"
-                  />
-                </svg>
+                <svg th:replace="~{fragments/nav-icons :: about}"></svg>
                 <span th:text="#{nav.about}">Who am i?</span>
               </a>
             </li>
             <li>
               <a href="#projects">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="16"
-                  height="16"
-                  fill="currentColor"
-                  class="bi bi-code-slash"
-                  viewBox="0 0 16 16"
-                >
-                  <path
-                    d="M10.478 1.647a.5.5 0 1 0-.956-.294l-4 13a.5.5 0 0 0 .956.294zM4.854 4.146a.5.5 0 0 1 0 .708L1.707 8l3.147 3.146a.5.5 0 0 1-.708.708l-3.5-3.5a.5.5 0 0 1 0-.708l3.5-3.5a.5.5 0 0 1 .708 0m6.292 0a.5.5 0 0 0 0 .708L14.293 8l-3.147 3.146a.5.5 0 0 0 .708.708l3.5-3.5a.5.5 0 0 0 0-.708l-3.5-3.5a.5.5 0 0 0-.708 0"
-                  />
-                </svg>
+                <svg th:replace="~{fragments/nav-icons :: projects}"></svg>
                 <span th:text="#{nav.projects}">Projects</span>
               </a>
             </li>
 
             <li>
               <a href="#contact">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="16"
-                  height="16"
-                  fill="currentColor"
-                  class="bi bi-send"
-                  viewBox="0 0 16 16"
-                >
-                  <path
-                    d="M15.854.146a.5.5 0 0 1 .11.54l-5.819 14.547a.75.75 0 0 1-1.329.124l-3.178-4.995L.643 7.184a.75.75 0 0 1 .124-1.33L15.314.037a.5.5 0 0 1 .54.11ZM6.636 10.07l2.761 4.338L14.13 2.576zm6.787-8.201L1.591 6.602l4.339 2.76z"
-                  />
-                </svg>
+                <svg th:replace="~{fragments/nav-icons :: contact}"></svg>
                 <span th:text="#{nav.contact}">Contact</span>
               </a>
             </li>
@@ -170,12 +122,7 @@
         </nav>
         <div class="header-actions">
           <form method="get" action="/">
-            <select
-              name="lang"
-              id="lang"
-              class="lang-select"
-              onchange="this.form.submit()"
-            >
+            <select name="lang" id="lang" class="lang-select">
               <option
                 value="en"
                 th:selected="${#locale.language == 'en'}"
@@ -252,7 +199,10 @@
           <h2 class="section-title" th:text="#{about.title}">About Me</h2>
           <div class="content-wrapper grid grid-4 md:grid-8 lg:grid-12">
             <div class="content-left col-4 md:col-3 lg:col-5 mb-3">
-              <img src="/images/yeyintlwin-1200x900.jpg" alt="Ye Yint Lwin" />
+              <img
+                th:src="@{/images/yeyintlwin-1200x900.jpg}"
+                alt="Ye Yint Lwin"
+              />
             </div>
             <div class="content-right col-4 md:col-5 lg:col-7">
               <h3 class="main-color mb-1" th:text="#{about.subtitle}">
@@ -346,7 +296,10 @@
             <!-- start:project-card -->
             <div class="project-card col-4 md:col-4 lg:col-6 my-2">
               <div class="img-hover-zoom">
-                <img src="/images/music_app_mockup.jpg" alt="Project Image" />
+                <img
+                  th:src="@{/images/music_app_mockup.jpg}"
+                  alt="Project Image"
+                />
               </div>
               <div class="project-info">
                 <div class="project-title">
@@ -382,7 +335,7 @@
             <div class="project-card col-4 md:col-4 lg:col-6 my-2">
               <div class="img-hover-zoom">
                 <img
-                  src="/images/cli_shopping_manager_mockup.png"
+                  th:src="@{/images/cli_shopping_manager_mockup.png}"
                   alt="Project Image"
                 />
               </div>
@@ -494,14 +447,11 @@
         <p>Coded with <i class="fa-regular fa-heart"></i> by Ye Yint Lwin</p>
       </div>
     </footer>
-    <script src="/js/portfolio.js"></script>
+    <script th:src="@{/js/portfolio.js}"></script>
     <script
       src="https://unpkg.com/@dotlottie/player-component@2.7.12/dist/dotlottie-player.mjs"
       type="module"
     ></script>
-    <script>
-      let vh = window.innerHeight * 0.01;
-      document.documentElement.style.setProperty("--vh", `${vh}px`);
-    </script>
+    <script th:src="@{/js/home-page.js}"></script>
   </body>
 </html>

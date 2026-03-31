@@ -1,13 +1,12 @@
 <!DOCTYPE html>
-<html lang="en">
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Ye Yint Lwin | 404</title>
 
-    <link rel="stylesheet" href="/css/portfolio.css" />
-    <link rel="stylesheet" href="/css/404.css" />
-    <link rel="stylesheet" href="/css/debugger.css" />
+    <link rel="stylesheet" th:href="@{/css/portfolio.css}" />
+    <link rel="stylesheet" th:href="@{/css/404.css}" />
   </head>
   <body>
     <main>
@@ -20,6 +19,6 @@
       </div>
     </main>
 
-    <script src="/js/portfolio.js"></script>
+    <script th:src="@{/js/portfolio.js}"></script>
   </body>
 </html>
