@@ -52,7 +52,33 @@ jobs:
           username: ${{ secrets.LIGHTSAIL_USER }}
           key: ${{ secrets.LIGHTSAIL_SSH_KEY }}
           script: |
+            echo "=== Setup directory ==="
+            mkdir -p ~/spring-portfolio
+
+            echo "=== Write latest docker-compose.yml ==="
+            cat > ~/spring-portfolio/docker-compose.yml << 'EOF'
+            services:
+              portfolio:
+                image: yeyintlwin/portfolio:latest
+                ports:
+                  - "8080:5000"
+                environment:
+                  SPRING_APPLICATION_NAME: portfolio
+                restart: always
+            EOF
+
+            echo "=== Docker Hub login ==="
+            echo "${{ secrets.DOCKERHUB_TOKEN }}" | docker login -u "${{ secrets.DOCKERHUB_USERNAME }}" --password-stdin
+
+            echo "=== Pull latest image ==="
             cd ~/spring-portfolio
             docker compose pull
+
+            echo "=== Restart container ==="
             docker compose up -d --remove-orphans
+
+            echo "=== Cleanup old images ==="
             docker image prune -f
+
+            echo "=== Running containers ==="
+            docker ps
