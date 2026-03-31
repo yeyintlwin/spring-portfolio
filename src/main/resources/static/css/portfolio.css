@@ -305,6 +305,10 @@ section:nth-child(1) {
   box-sizing: border-box;
 }
 
+section:nth-child(1) > .container {
+  min-height: 0;
+}
+
 section:nth-child(1)::before {
   position: absolute;
   top: 50%;
