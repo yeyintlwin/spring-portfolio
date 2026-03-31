@@ -58,7 +58,7 @@
 
     const ctx = canvas.getContext("2d");
     let particles = [];
-    const count = 40;
+    const count = 60;
 
     function resizeCanvas() {
       canvas.width = homeSection.offsetWidth;
@@ -70,10 +70,10 @@
       return {
         x: Math.random() * canvas.width,
         y: Math.random() * canvas.height,
-        r: Math.random() * 2.5 + 1,
-        dx: (Math.random() - 0.5) * 0.4,
-        dy: (Math.random() - 0.5) * 0.4,
-        opacity: Math.random() * 0.3 + 0.1,
+        r: Math.random() * 4 + 1.5,
+        dx: (Math.random() - 0.5) * 0.5,
+        dy: (Math.random() - 0.5) * 0.5,
+        opacity: Math.random() * 0.4 + 0.15,
         color: isDark ? "255,255,255" : "99,102,241",
       };
     }
@@ -111,10 +111,10 @@
             particles[i].x - particles[j].x,
             particles[i].y - particles[j].y
           );
-          if (dist < 120) {
+          if (dist < 160) {
             const c = isDark ? "255,255,255" : "99,102,241";
-            ctx.strokeStyle = `rgba(${c}, ${0.06 * (1 - dist / 120)})`;
-            ctx.lineWidth = 0.5;
+            ctx.strokeStyle = `rgba(${c}, ${0.1 * (1 - dist / 160)})`;
+            ctx.lineWidth = 0.8;
             ctx.beginPath();
             ctx.moveTo(particles[i].x, particles[i].y);
             ctx.lineTo(particles[j].x, particles[j].y);
@@ -166,8 +166,8 @@
   });
 
   // ── 5. Emoji Wave ──────────────────────────────────────────
-  const aboutIntro = document.querySelector(".section-about .content-right p");
-  if (aboutIntro) {
+  const aboutIntro = document.getElementById("about-intro");
+  if (aboutIntro && aboutIntro.innerHTML.includes("👋")) {
     aboutIntro.innerHTML = aboutIntro.innerHTML.replace(
       /👋/g,
       '<span class="wave-emoji">👋</span>'
