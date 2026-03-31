@@ -179,7 +179,7 @@ nav a {
   text-align: center;
   display: flex;
   flex-direction: column;
-  font-size: 0.75em;
+  font-size: 0.85em;
   font-weight: 500;
   color: var(--text-color-secondary);
   -webkit-tap-highlight-color: transparent;
@@ -209,11 +209,8 @@ nav a:active {
 .logo {
   text-decoration: none;
   font-family: "Grand Hotel", cursive;
-  font-size: 1.75em;
-  background: var(--main-gradient);
-  -webkit-background-clip: text;
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
+  font-size: 1.8em;
+  color: var(--text-color);
 }
 
 /* ── Theme Switcher ───────────────────────────────────────── */
@@ -645,7 +642,7 @@ footer p {
   }
 
   nav > ul > li span {
-    font-size: 0.95em;
+    font-size: 1.1em;
     font-weight: 500;
   }
 
@@ -675,9 +672,18 @@ footer p {
 
 /* ── Animations ───────────────────────────────────────────── */
 .animated-text {
-  animation: flow 20s ease-in-out infinite;
-  background: var(--main-gradient);
-  background-size: 200%;
+  animation: flow 30s ease-out infinite;
+  background: linear-gradient(
+    to right,
+    #818cf8,
+    #e0e7ff,
+    #38bdf8,
+    #e879f9,
+    #38bdf8,
+    #e0e7ff,
+    #818cf8
+  );
+  background-size: 300%;
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -706,6 +712,151 @@ footer p {
 .fade-in.visible {
   opacity: 1;
   transform: translateY(0);
+}
+
+/* ── Custom Cursor ────────────────────────────────────────── */
+.cursor-dot,
+.cursor-ring {
+  pointer-events: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  border-radius: 50%;
+  z-index: 9999;
+  transition: opacity 0.3s;
+}
+
+.cursor-dot {
+  width: 6px;
+  height: 6px;
+  background: var(--main-color);
+}
+
+.cursor-ring {
+  width: 36px;
+  height: 36px;
+  border: 1.5px solid var(--main-color);
+  opacity: 0.5;
+  transition: width 0.25s cubic-bezier(0.4, 0, 0.2, 1),
+    height 0.25s cubic-bezier(0.4, 0, 0.2, 1),
+    opacity 0.25s cubic-bezier(0.4, 0, 0.2, 1),
+    background 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.cursor-ring.hover {
+  width: 52px;
+  height: 52px;
+  opacity: 0.3;
+  background: var(--main-color);
+}
+
+@media (pointer: coarse) {
+  .cursor-dot,
+  .cursor-ring {
+    display: none !important;
+  }
+}
+
+/* ── Scroll Progress Bar ──────────────────────────────────── */
+.scroll-progress {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 3px;
+  width: 0%;
+  background: var(--main-gradient);
+  z-index: 9998;
+  transition: none;
+}
+
+/* ── Typing Effect ────────────────────────────────────────── */
+.typing-text {
+  display: inline;
+}
+
+.typing-cursor {
+  display: inline-block;
+  width: 2px;
+  height: 1.1em;
+  background: var(--main-color);
+  margin-left: 2px;
+  vertical-align: text-bottom;
+  animation: blink 0.75s step-end infinite;
+}
+
+@keyframes blink {
+  50% {
+    opacity: 0;
+  }
+}
+
+/* ── Emoji Wave ───────────────────────────────────────────── */
+.wave-emoji {
+  display: inline-block;
+  animation: wave 2.5s ease-in-out infinite;
+  transform-origin: 70% 70%;
+}
+
+@keyframes wave {
+  0% {
+    transform: rotate(0deg);
+  }
+  10% {
+    transform: rotate(14deg);
+  }
+  20% {
+    transform: rotate(-8deg);
+  }
+  30% {
+    transform: rotate(14deg);
+  }
+  40% {
+    transform: rotate(-4deg);
+  }
+  50% {
+    transform: rotate(10deg);
+  }
+  60% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
+}
+
+/* ── Staggered Fade-In ────────────────────────────────────── */
+.stagger-item {
+  opacity: 0;
+  transform: translateY(16px);
+  transition: opacity 0.5s cubic-bezier(0.4, 0, 0.2, 1),
+    transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.stagger-item.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ── 3D Tilt Card ─────────────────────────────────────────── */
+.project-card {
+  transform-style: preserve-3d;
+  perspective: 800px;
+}
+
+/* ── Floating Particles ───────────────────────────────────── */
+.particles-canvas {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.section-home .container {
+  position: relative;
+  z-index: 1;
 }
 
 /* ── Misc ─────────────────────────────────────────────────── */
