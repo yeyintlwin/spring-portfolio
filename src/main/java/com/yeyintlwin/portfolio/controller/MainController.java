@@ -10,8 +10,4 @@ public class MainController {
         return "home-page";
     }
 
-    @GetMapping("/test")
-    public String showTest() {
-        return "test-page";
-    }
 }
