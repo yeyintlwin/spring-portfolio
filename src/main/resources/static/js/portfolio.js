@@ -1,11 +1,9 @@
-// Function to set a cookie
 const setCookie = (name, value, days) => {
   const date = new Date();
   date.setTime(date.getTime() + days * 24 * 60 * 60 * 1000);
   document.cookie = `${name}=${value}; expires=${date.toUTCString()}; path=/`;
 };
 
-// Function to get a cookie value
 const getCookie = (name) => {
   const cookieArr = document.cookie.split("; ");
   for (let cookie of cookieArr) {
@@ -15,7 +13,7 @@ const getCookie = (name) => {
   return null;
 };
 
-// start: theme-function
+// Theme
 const themeSwitcher = document.getElementById("themeSwitcher");
 const themeIcon = document.getElementById("themeIcon");
 const body = document.body;
@@ -48,25 +46,21 @@ if (themeSwitcher && themeIcon) {
     toggleTheme();
   });
 }
-// end: theme-function
 
-// start: menu item highlight
+// Active nav highlight
 const sections = document.querySelectorAll("section");
 const navLinks = document.querySelectorAll("nav a");
 
 if (sections.length && navLinks.length) {
   window.addEventListener("scroll", () => {
     let current = "";
-
     sections.forEach((section) => {
       const sectionTop = section.offsetTop;
       const sectionHeight = section.offsetHeight;
-
       if (window.scrollY >= sectionTop - sectionHeight / 3) {
         current = section.getAttribute("id");
       }
     });
-
     navLinks.forEach((link) => {
       link.classList.remove("active");
       if (link.getAttribute("href") === `#${current}`) {
@@ -75,4 +69,20 @@ if (sections.length && navLinks.length) {
     });
   });
 }
-// end: menu item highlight
+
+// Scroll fade-in animation via IntersectionObserver
+const fadeEls = document.querySelectorAll(".fade-in");
+if (fadeEls.length) {
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("visible");
+          observer.unobserve(entry.target);
+        }
+      });
+    },
+    { threshold: 0.15 }
+  );
+  fadeEls.forEach((el) => observer.observe(el));
+}
