@@ -61,7 +61,7 @@ jobs:
               portfolio:
                 image: yeyintlwin/portfolio:latest
                 ports:
-                  - "8080:5000"
+                  - "8080:8080"
                 environment:
                   SPRING_APPLICATION_NAME: portfolio
                 restart: always
