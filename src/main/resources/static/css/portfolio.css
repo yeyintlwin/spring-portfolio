@@ -300,14 +300,9 @@ section:nth-child(1) {
   min-height: 100vh;
   min-height: 100svh;
   min-height: 100dvh;
-  display: flex;
-  flex-direction: column;
+  display: grid;
+  align-content: center;
   box-sizing: border-box;
-}
-
-section:nth-child(1) > .container {
-  flex: 1;
-  min-height: 0;
 }
 
 section:nth-child(1)::before {
@@ -592,8 +587,7 @@ footer p {
   }
 
   .section-home .container {
-    display: flex;
-    align-items: center;
+    display: block;
   }
 
   .section-home .content-wrapper .content-left {
