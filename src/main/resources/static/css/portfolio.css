@@ -144,6 +144,7 @@ header::before {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  gap: 16px;
 }
 
 /* ── Navigation ───────────────────────────────────────────── */
@@ -639,7 +640,7 @@ footer p {
     -webkit-backdrop-filter: none;
     box-shadow: none;
     border: none;
-    gap: 8px;
+    gap: 4px;
     padding: 0;
   }
 
@@ -652,12 +653,12 @@ footer p {
   }
 
   nav > ul > li span {
-    font-size: 1.1em;
+    font-size: 0.95rem;
     font-weight: 500;
   }
 
   nav > ul > li a {
-    padding: 6px 14px;
+    padding: 8px 16px;
     border-radius: 10px;
     transition: background var(--transition-fast), color var(--transition-fast);
   }
@@ -678,6 +679,13 @@ footer p {
 }
 
 @media screen and (min-width: 1200px) {
+  nav > ul > li span {
+    font-size: 1.05rem;
+  }
+
+  nav > ul > li a {
+    padding: 8px 20px;
+  }
 }
 
 /* ── Animations ───────────────────────────────────────────── */
