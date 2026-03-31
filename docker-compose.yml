@@ -1,7 +1,8 @@
 services:
   portfolio:
     build: .
-    image: portfolio:local
+    # Docker Hub: create repo "portfolio" under your account, then docker login && docker compose push
+    image: yeyintlwin/portfolio:latest
     ports:
       - "80:5000"
     environment:
