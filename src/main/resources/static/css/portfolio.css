@@ -297,6 +297,17 @@ section:nth-child(1) {
   padding-top: 64px;
   position: relative;
   overflow: hidden;
+  min-height: 100vh;
+  min-height: 100svh;
+  min-height: 100dvh;
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+}
+
+section:nth-child(1) > .container {
+  flex: 1;
+  min-height: 0;
 }
 
 section:nth-child(1)::before {

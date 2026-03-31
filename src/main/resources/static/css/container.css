@@ -68,7 +68,6 @@
 /* XXL */
 @media screen and (min-width: 1400px) {
   .container {
-    /* wtf: this is all of solution. */
-    min-height: 800px;
+    max-width: 1320px;
   }
 }
