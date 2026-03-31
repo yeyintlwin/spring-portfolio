@@ -4,6 +4,6 @@ services:
     # Docker Hub: create repo "portfolio" under your account, then docker login && docker compose push
     image: yeyintlwin/portfolio:latest
     ports:
-      - "80:5000"
+      - "8080:5000"
     environment:
       SPRING_APPLICATION_NAME: portfolio
